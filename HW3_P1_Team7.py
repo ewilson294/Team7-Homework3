@@ -23,41 +23,47 @@ while again.lower() == 'y':
     #Calculate the average number of characters in each word
     print("Average number of characters: ", round((len(tweet) - spacecount)/wordcount,2))
 
-    #P1.3 - Count upper case letters
+    #Count upper case letters
     count = 0
     for letter in tweet:
         if letter.isupper() :
             count += 1
     print("Number of upper case leteers: ", count)
 
-    #P1.4 - Count lower case letters
+    #Count lower case letters
     count = 0
     for letter in tweet:
         if letter.islower() :
             count += 1
     print("Number of lower case leteers: ", count)
 
-    #P1.5 - Reverse the string
-    count = len(tweet)
-    rev = ""
-    while count >0 :
-        count = count - 1
-        rev += tweet[count]
-    print("Your tweet reversed:" ,rev)
-
+    #Reverse the string
+    def reverse(tweeter):
+        count = len(tweeter)
+        rev = ""
+        while count >0 :
+            count = count - 1
+            rev += tweeter[count]
+        return (rev)
+    print("Your tweet reversed:" ,reverse(tweet))
+    
+    #string stats
     def cal_str_stats(mystr):
+        #display the number of alphabets
         count = 0
         for letter in mystr:
             if letter.isalpha():
                 count += 1
         print("Number of alphabets (a to z, and A to Z): ", count)
-    
+        
+        #display number of digits 
         count = 0
         for letter in mystr:
             if letter.isdigit():
                 count += 1
         print("Number of digits 0 to 9: ", count)
-    
+        
+        #display number of special characters 
         count = 0
         for letter in mystr:
             if not(letter.isdigit() or letter.isspace() or letter.isalpha()):
